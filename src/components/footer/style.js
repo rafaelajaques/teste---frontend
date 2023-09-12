@@ -9,6 +9,7 @@ export const Container = styled.div`
   font-size: 12px;
   color: #fff;
   background: #006497;
+  margin-top: auto;
 `;
 
 export const Logo = styled.div`

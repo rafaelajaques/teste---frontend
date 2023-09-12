@@ -73,51 +73,55 @@ function Programming(props) {
   }
 
   return (
-    <div>
-      <Container>
-        <Carousel
-          initialActiveIndex={currentPage - 1}
-          onChange={(currentItem, pageIndex) => setCurrentPage(pageIndex + 1)}
-        >
-          {dias.map((item, index) => (
-            <div key={item.id} initialActiveIndex={1}>
-              <p>{item.dtString}</p>
-            </div>
-          ))}
-        </Carousel>
-        {dados &&
-          dados.programme.entries.map((item, index) => (
-            <Accordion className="accordion" key={index}>
-              <AccordionSummary
-                expandIcon={<ExpandMoreIcon />}
-                aria-controls="panel1a-content"
-                id="panel1a-header"
-              >
-                <Typography className="program">
-                  <img
-                    src={item.custom_info.Graficos.LogoURL}
-                    alt="Logo do Jornal Hoje"
-                  />
-                  <p>
-                    {item.human_start_time.substring(0, 8)}{" "}
-                    {AoVivo(item.start_time, item.end_time)}
-                  </p>
-                  <p>{item.title}</p>
-                </Typography>
-              </AccordionSummary>
-              <AccordionDetails>
-                <Typography className="content">
-                  <img src={item.custom_info.Graficos.ImagemURL} alt="" />
-                  <p>
-                    Os destaques do dia no Brasil e no mundo, com apresentação
-                    de César Tralli.
-                  </p>
-                </Typography>
-              </AccordionDetails>
-            </Accordion>
-          ))}
-      </Container>
-    </div>
+    // <div>
+    <Container>
+      <Carousel
+        initialActiveIndex={currentPage - 1}
+        onChange={(currentItem, pageIndex) => setCurrentPage(pageIndex + 1)}
+      >
+        {dias.map((item, index) => (
+          <div key={item.id} initialActiveIndex={1}>
+            <p>{item.dtString}</p>
+          </div>
+        ))}
+      </Carousel>
+      {dados &&
+        dados.programme.entries.map((item, index) => (
+          <Accordion className="accordion" key={index}>
+            <AccordionSummary
+              expandIcon={<ExpandMoreIcon />}
+              aria-controls="panel1a-content"
+              id="panel1a-header"
+            >
+              <Typography className="program">
+                <img
+                  src={item.custom_info.Graficos.LogoURL}
+                  alt="Logo do programa"
+                />
+                <p>{item.human_start_time.substring(0, 8)} </p>
+                <p>{item.program.name}</p>
+                <p className="ao-vivo">
+                  {AoVivo(item.start_time, item.end_time)}
+                </p>
+              </Typography>
+            </AccordionSummary>
+            <AccordionDetails>
+              <Typography className="content">
+                <img
+                  src={item.custom_info.Graficos.ImagemURL}
+                  alt="Imagem do programa"
+                />
+                <div className="description">
+                  <p>{item.description}</p>
+                  <p className="video">{item.custom_info.Video}</p>
+                  <p className="horaBras">Horário de Brasília</p>
+                </div>
+              </Typography>
+            </AccordionDetails>
+          </Accordion>
+        ))}
+    </Container>
+    // </div>
   );
 }
 
