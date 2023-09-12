@@ -2,13 +2,14 @@ import styled from "styled-components";
 
 export const Container = styled.div`
   width: 100vw;
-  /* height: 100px; */
   padding: 15px;
   display: flex;
   flex-direction: column;
   font-size: 12px;
   color: #fff;
   background: #006497;
+  position: absolute;
+  bottom: 0;
 `;
 
 export const Logo = styled.div`

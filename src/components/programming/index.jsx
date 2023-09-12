@@ -39,7 +39,7 @@ async function Atualizar(dataFormatada) {
     return response;
   } catch (error) {
     console.error("Erro na atualização:", error);
-    throw error; // Lança o erro para que possa ser tratado no chamador da função
+    throw error;
   }
 }
 
@@ -55,11 +55,8 @@ function Programming(props) {
       .then((response) => {
         setDados(response.data);
         setPrograms(response.data);
-        // dados = response.data;
       })
-      .catch((error) => {
-        // Lide com erros aqui
-      });
+      .catch((error) => {});
   }, [currentPage]);
 
   const dias = [];
@@ -67,7 +64,7 @@ function Programming(props) {
 
   for (let i = 0; i < numDias; i++) {
     const date = addDays(new Date(), i - 1);
-    const formattedDate = format(date, "yyyy-MM-dd"); // Formate a data como "ano-mês-dia"
+    const formattedDate = format(date, "yyyy-MM-dd");
 
     dias.push({ id: i + 1, dtString: formattedDate });
   }
@@ -101,9 +98,9 @@ function Programming(props) {
                 />
                 <p>{item.human_start_time.substring(0, 8)} </p>
                 <p>{item.program.name}</p>
-                <p className="ao-vivo">
+                <div className="ao-vivo">
                   {AoVivo(item.start_time, item.end_time)}
-                </p>
+                </div>
               </Typography>
             </AccordionSummary>
             <AccordionDetails>
