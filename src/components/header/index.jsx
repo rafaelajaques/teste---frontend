@@ -60,13 +60,13 @@ function Header() {
           </li>
           <li>
             <a href="https://redeglobo.globo.com/">
-              <img src={Logo} alt="logo-globo" />
+              <img className="logo-globo" src={Logo} alt="logo-globo" />
             </a>
           </li>
         </ul>
         <div>
           <a href="#">Assine Já</a>
-          <button>Entrar</button>
+          <button className="login">Entrar</button>
         </div>
       </Navigation>
       <Menu>
@@ -76,7 +76,7 @@ function Header() {
         </div>
         <div className="rpc">
           <a href="https://redeglobo.globo.com/rpc/">RPC</a>
-          <a href="https://redeglobo.globo.com/rpc/">
+          <a href="https://redeglobo.globo.com/rpc/" className="rpc-image">
             <img src="/rpc.webp" />
           </a>
         </div>

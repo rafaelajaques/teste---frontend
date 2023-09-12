@@ -17,7 +17,7 @@ function AoVivo(startTime, endTime) {
   const timestampAtual = Math.floor(Date.now() / 1000);
 
   if (timestampAtual >= startTime && timestampAtual <= endTime) {
-    return "Ao Vivo";
+    return "AO VIVO";
   } else {
     return "";
   }
@@ -34,7 +34,7 @@ async function Atualizar(dataFormatada) {
 
     const response = await axios.get(newUrl);
 
-    console.log(response);
+    // console.log(response);
 
     return response;
   } catch (error) {
@@ -76,6 +76,7 @@ function Programming(props) {
     // <div>
     <Container>
       <Carousel
+        className="carousel"
         initialActiveIndex={currentPage - 1}
         onChange={(currentItem, pageIndex) => setCurrentPage(pageIndex + 1)}
       >

@@ -137,6 +137,17 @@ export const Navigation = styled.div`
       }
     }
   }
+
+  @media (max-width: 768px) {
+    .logo-globo,
+    .login {
+      display: none;
+    }
+
+    div {
+      width: 20%;
+    }
+  }
 `;
 
 export const Menu = styled.div`
@@ -196,6 +207,18 @@ export const Menu = styled.div`
       &::placeholder {
         color: #fff;
       }
+    }
+  }
+
+  @media (max-width: 768px) {
+    .menu h2,
+    .rpc-image {
+      display: none;
+    }
+
+    .search input {
+      width: 50px;
+      font-size: 12px;
     }
   }
 `;

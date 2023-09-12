@@ -9,6 +9,10 @@ export const Container = styled.div`
   height: 350px;
   font-weight: 700;
 
+  .carousel {
+    margin-bottom: 30px;
+  }
+
   .rec.rec-arrow {
     background-color: transparent;
     color: #006497;
@@ -25,7 +29,7 @@ export const Container = styled.div`
   }
 
   .accordion {
-    margin-top: 30px;
+    /* margin-top: 30px; */
   }
 
   .program {
@@ -60,8 +64,9 @@ export const Container = styled.div`
   }
 
   .ao-vivo {
-    padding: 3px;
+    padding: 2px;
     background: #ff0000;
+    font-size: 12px;
     color: #fff;
     border-radius: 3px;
     font-weight: bold;
@@ -74,7 +79,6 @@ export const Container = styled.div`
 
   .video {
     background: #7d7d7d;
-    display: inline-block;
     width: 26px;
     font-size: 12px;
     text-align: center;
@@ -85,5 +89,18 @@ export const Container = styled.div`
   .horaBras {
     font-size: 12px;
     color: #7d7d7d;
+  }
+
+  @media (max-width: 768px) {
+    .content,
+    .description {
+      flex-direction: column;
+      justify-content: flex-start;
+      font-size: 14px;
+    }
+
+    .program {
+      font-size: 14px;
+    }
   }
 `;
